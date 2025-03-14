@@ -1,6 +1,8 @@
-﻿namespace ExamenProjetGestionEtudiant
+﻿using System.Windows.Forms;
+
+namespace ExamenProjetGestionEtudiant
 {
-    partial class ListMatiereForm
+    partial class ListMatiereForm : Form
     {
         /// <summary>
         /// Required designer variable.

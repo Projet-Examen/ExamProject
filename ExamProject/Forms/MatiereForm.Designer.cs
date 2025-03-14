@@ -1,6 +1,8 @@
-﻿namespace ExamProject.Forms
+﻿using System.Windows.Forms;
+
+namespace ExamProject.Forms
 {
-    partial class MatiereForm
+    partial class MatiereForm : Form
     {
         /// <summary>
         /// Required designer variable.

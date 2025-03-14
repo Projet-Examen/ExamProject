@@ -10,7 +10,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 
 namespace ExamenProjetGestionEtudiant
 {
-    internal class DBExamenContext : DbContext
+    internal class DBExamenContext:DbContext
     {
         public DBExamenContext() : base("examenConnect") { }
 

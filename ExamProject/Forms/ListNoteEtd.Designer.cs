@@ -1,6 +1,8 @@
-﻿namespace ExamProject.Forms
+﻿using System.Windows.Forms;
+
+namespace ExamProject.Forms
 {
-    partial class ListNoteEtd
+    partial class ListNoteEtd : Form
     {
         /// <summary>
         /// Required designer variable.

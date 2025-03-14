@@ -20,7 +20,7 @@ namespace ExamenProjetGestionEtudiant
 
         private void HomeForm_Load(object sender, EventArgs e)
         {
-            tabPage1.Text = "📊 Dashboard";
+            tabPage1.Text = "Dashboard";
             tabPage2.Text = "Liste ";
         }
 
@@ -65,9 +65,23 @@ namespace ExamenProjetGestionEtudiant
                 case "NoeudEnregNote":
                     LoadFormInPanel(new AjoutNoteForm());
                     break;
+                case "NoeudRapportEtudiants": 
+                    LoadFormInPanel(new FormEtudiantClasseRapport());
+                    break;
+             
+                case "NoeudRapportMeilleurEtudiant":
+                    LoadFormInPanel(new FormMeilleurEtudiants());
+                    break;
 
-
+                case "NoeudRapportBulletin":
+                    LoadFormInPanel(new FormBulletin2());
+                    break;
             }
+        }
+
+        private void btnDeconnexion_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

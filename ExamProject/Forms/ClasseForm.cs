@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ExamProject.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ExamenProjetGestionEtudiant
@@ -160,6 +161,16 @@ namespace ExamenProjetGestionEtudiant
         }
 
         private void btnListProfs_Click(object sender, EventArgs e)
+        {
+            using (var db = new DBExamenContext())
+            {
+                int idClasse = Convert.ToInt32(txtId.Text);
+                ListeProfesseurClasse listeForme = new ListeProfesseurClasse(idClasse);
+                listeForme.ShowDialog();
+            }
+        }
+
+        private void txtId_TextChanged(object sender, EventArgs e)
         {
 
         }
