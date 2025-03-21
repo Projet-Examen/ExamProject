@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ExamenProjetGestionEtudiant
 {
-    class Utilisateur
+    public class Utilisateur
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

@@ -31,11 +31,11 @@ namespace ExamenProjetGestionEtudiant
             cmbClasse.SelectedIndex = -1;
             cmbClasse.Text = "choisir la classe...";
             dataGridViewEtd.DataSource = db.etudiants.Select(e => new { e.Id, e.Matricule, e.Nom, e.Prenom, e.DateNaissance, e.Sexe, e.classe.NomClasse }).ToList();
-            cmbMatiere.DataSource = db.matieres.ToList();
-            cmbMatiere.DisplayMember = "NomMatiere";
-            cmbMatiere.ValueMember = "Id";
-            cmbMatiere.SelectedIndex = -1;
-            cmbMatiere.Text = "Sélectionner la matière...";
+            //cmbMatiere.DataSource = db.matieres.ToList();
+            //cmbMatiere.DisplayMember = "NomMatiere";
+            //cmbMatiere.ValueMember = "Id";
+            //cmbMatiere.SelectedIndex = -1;
+            //cmbMatiere.Text = "Sélectionner la matière...";
             groupBox1.Visible = false;
         }
 
@@ -52,6 +52,18 @@ namespace ExamenProjetGestionEtudiant
                         if (etd != null)
                         {
                             txtId.Text = etd.Id.ToString();
+                            int idClasse = etd.IdClasse;
+                            var matieresAssociees = db.cours
+                            .Where(c => c.classes.Any(cl => cl.Id == idClasse))
+                            .SelectMany(c => c.matieres)
+                            .Distinct()
+                            .ToList();
+
+                            cmbMatiere.DataSource = matieresAssociees;
+                            cmbMatiere.DisplayMember = "NomMatiere";
+                            cmbMatiere.ValueMember = "Id";
+                            cmbMatiere.SelectedIndex = -1;
+                            cmbMatiere.Text = "Sélectionner la matière...";
                         }
                     }
                 }
