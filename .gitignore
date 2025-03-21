@@ -1,2 +1,7 @@
 "# Ignorer fichiers inutiles" 
 "# Ignorer fichiers inutiles" 
+/ExamProject/.vs
+/ExamProject/bin/Debug
+/ExamProject/obj/Debug
+/packages
+/.vs/ExamProject
